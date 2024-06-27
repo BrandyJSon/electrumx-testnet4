@@ -915,16 +915,6 @@ class BitcoinTestnet(BitcoinTestnetMixin, Coin):
     DESERIALIZER = lib_tx.DeserializerSegWit
     CRASH_CLIENT_VER = (3, 2, 3)
     PEERS = [
-        'testnet.hsmiths.com t53011 s53012',
-        'testnet.qtornado.com s t',
-        'testnet1.bauerj.eu t50001 s50002',
-        'tn.not.fyi t55001 s55002',
-        'bitcoin.cluelessperson.com s t',
-        'blackie.c3-soft.com s57006',
-        'electrum.blockstream.info t60001 s60002',
-        'testnet.aranguren.org s t',
-        'explorerzydxu5ecjrkwceayqybizmpjjznk5izmitf2modhcusuqlid.onion t143',
-        'electrum1.cipig.net t10068',
     ]
 
     @classmethod
@@ -946,9 +936,12 @@ class BitcoinSegwitTestnet(BitcoinTestnet):
 class BitcoinRegtest(BitcoinTestnet):
     NAME = "Bitcoin"
     NET = "regtest"
-    GENESIS_HASH = ('0f9188f13cb7b2c71f2a335e3a4fc328'
-                    'bf5beb436012afca590b1a11466e2206')
-    PEERS = []
+    GENESIS_HASH = ('00000000da84f2bafbbc53dee25a72ae'
+                    '507ff4914b867c565be350b0da8bf043')
+                    
+    PEERS = [
+            'mempool.space t40001 s40002'
+            ]
     TX_COUNT = 1
     TX_COUNT_HEIGHT = 1
 
